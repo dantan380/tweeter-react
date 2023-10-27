@@ -1,6 +1,13 @@
 function TweetForm() {
+  const promptText = "What are you humming about?";
   return (
-    <h1>I am the TweetForm component</h1>
+    <section className="newtweet">
+      <form method="post" action="/tweets" className="newtweet__form" onSubmit ={(event) => event.preventDefault()}>
+        <textarea className="form__textarea" name="text" placeholder={promptText}></textarea>
+        <input type="submit" value="Tweet" className="form__input" onClick={(event) => event.preventDefault()}/>
+        <span className="form__counter">140</span>
+      </form>
+    </section>
   );
 }
 
